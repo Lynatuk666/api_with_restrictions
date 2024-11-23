@@ -9,7 +9,8 @@ from advertisements.models import Advertisement
 class AdvertisementFilter(filters.FilterSet):
     """Фильтры для объявлений."""
     created_at  = DateFromToRangeFilter()
-    creator = filters.ModelChoiceFilter()
+    # creator = filters.ModelChoiceFilter(queryset=User.objects.all())
+    # print(creator)
 
     class Meta:
         model = Advertisement

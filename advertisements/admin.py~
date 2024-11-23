@@ -1,0 +1,7 @@
+from django.contrib import admin
+
+class AdvertisementAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title', 'description', 'creator', 'status', 'created_at')
+    list_display_links = ('id', 'title')
+    search_fields = ('title', 'description')
+    list_filter = ('status', 'creator', 'created_at')
