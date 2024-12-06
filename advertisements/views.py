@@ -12,9 +12,8 @@ class AdvertisementViewSet(ModelViewSet):
     """ViewSet для объявлений."""
     queryset = Advertisement.objects.all()
     serializer_class = AdvertisementSerializer
-    filter_class = AdvertisementFilter
-    # TODO: настройте ViewSet, укажите атрибуты для кверисета,
-    #   сериализаторов и фильтров
+    filterset_class = AdvertisementFilter
+
 
     def perfom_create(self, serializer):
         serializer.save(creator=self.request.user)
